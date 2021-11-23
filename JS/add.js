@@ -1,5 +1,5 @@
 const add = document.getElementById("add");
-const buttons = document.querySelectorAll("button");
+const buttons = document.querySelectorAll("button.deletebook");
 
 const myBooks = document.getElementById("books")
 const inputsAreValid = (form) => {
@@ -33,7 +33,7 @@ const addBook = (e) => {
          <li>
             <h3> ${form.title.value} </h3>
             <p> ${form.author.value}</p>
-            <button data-id="${id}" type="button">Remove</button>
+            <button class="deleteBook" data-id="${id}" type="button">Remove</button>
             <hr>
           </li>
         `

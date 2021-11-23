@@ -8,7 +8,7 @@ collection.forEach( book => listItems += `
     <li> 
         <h3> ${book.title} </h3> 
         <p> Author: ${book.author} </p>
-        <button  data-id="${book.id}" type="button"> Remove </button>
+        <button  class="deleteBook" data-id="${book.id}" type="button"> Remove </button>
         <hr/>
     </li>` 
 )
