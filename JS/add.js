@@ -37,8 +37,8 @@ const addBook = (e) => {
         <hr>
     `;
 
-    localStorage.setItem('mybooks', JSON.stringify(updatedCollection));
     myBooks.appendChild(li);
+    localStorage.setItem('mybooks', JSON.stringify(updatedCollection));
   }
 
 };
