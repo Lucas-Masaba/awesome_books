@@ -1,5 +1,5 @@
 const add = document.getElementById('add');
-const buttons = document.querySelectorAll('button');
+const buttons = document.querySelectorAll('.deleteBook');
 
 const myBooks = document.getElementById('books');
 const inputsAreValid = (form) => {
