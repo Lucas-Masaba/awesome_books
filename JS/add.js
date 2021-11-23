@@ -30,13 +30,13 @@ const addBook = (e) => {
     const li = document.createElement('li');
 
     li.innerHTML = `
-         <li>
             <h3> ${form.title.value} </h3>
             <p> ${form.author.value}</p>
             <button class="deleteBook" data-id="${id}" type="button">Remove</button>
             <hr>
-          </li>
-        `;
+          
+    `;
+    
     myBooks.appendChild(li);
   }
 };
