@@ -1,4 +1,6 @@
 const add = document.getElementById("add");
+const buttons = document.querySelectorAll("button");
+
 const myBooks = document.getElementById("books")
 const inputsAreValid = (form) => {
     const allInput = form.querySelectorAll('input')
@@ -22,17 +24,16 @@ const addBook = (e) => {
     
     const updatedCollection = [...storedCollection, newBook]
 
-    console.log(updatedCollection )
     localStorage.setItem("mybooks", JSON.stringify(updatedCollection) )
 
     if ( inputsAreValid(form) ) {
         const li = document.createElement("li")
 
         li.innerHTML = `
-            <li>
+         <li>
             <h3> ${form.title.value} </h3>
             <p> ${form.author.value}</p>
-            <button type="button">Remove</button>
+            <button data-id="${id}" type="button">Remove</button>
             <hr>
           </li>
         `
@@ -41,4 +42,15 @@ const addBook = (e) => {
 
 }
 
+const removeBook = (e) => {
+    const buttonId = e.target.getAttribute("data-id");
+    e.target.parentElement.remove();
+    const storedBooks = JSON.parse(localStorage.getItem("mybooks"))
+    const afterDeleted = storedBooks.filter( book => book.id !== buttonId)
+   
+    localStorage.setItem( "mybooks", JSON.stringify(afterDeleted) )
+    
+}
+
 add.addEventListener('click', addBook)
+buttons.forEach( button => button.addEventListener('click', removeBook) )
