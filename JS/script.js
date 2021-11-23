@@ -11,4 +11,5 @@ collection.forEach((book) => {
         <hr/>
     </li>`;
 });
+
 books.innerHTML = listItems;

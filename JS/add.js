@@ -1,7 +1,7 @@
 const add = document.getElementById('add');
 const buttons = document.querySelectorAll('.deleteBook');
-
 const myBooks = document.getElementById('books');
+
 const inputsAreValid = (form) => {
   const allInput = form.querySelectorAll('input');
   const inputArr = [...allInput];
@@ -16,6 +16,7 @@ const addBook = (e) => {
   const storedCollection = JSON.parse(localStorage.getItem('mybooks'));
 
   const id = `${storedCollection.length + 1}`;
+
   const newBook = {
     id,
     title: form.title.value,
@@ -24,31 +25,38 @@ const addBook = (e) => {
 
   const updatedCollection = [...storedCollection, newBook];
 
-  localStorage.setItem('mybooks', JSON.stringify(updatedCollection));
+
 
   if (inputsAreValid(form)) {
     const li = document.createElement('li');
 
     li.innerHTML = `
-            <h3> ${form.title.value} </h3>
-            <p> ${form.author.value}</p>
-            <button class="deleteBook" data-id="${id}" type="button">Remove</button>
-            <hr>
-          
+        <h3> ${form.title.value} </h3>
+        <p> Author: ${form.author.value}</p>
+        <button class="deleteBook" data-id="${id}" type="button">Remove</button>
+        <hr>
     `;
-    
+
+    localStorage.setItem('mybooks', JSON.stringify(updatedCollection));
     myBooks.appendChild(li);
   }
+
 };
 
 const removeBook = (e) => {
-  const buttonId = e.target.getAttribute('data-id');
-  e.target.parentElement.remove();
-  const storedBooks = JSON.parse(localStorage.getItem('mybooks'));
-  const afterDeleted = storedBooks.filter((book) => book.id !== buttonId);
+    if (e.target.tagName.toLowerCase() === "button") {
 
-  localStorage.setItem('mybooks', JSON.stringify(afterDeleted));
+        const buttonId = e.target.getAttribute('data-id');
+        const storedBooks = JSON.parse(localStorage.getItem('mybooks'));
+        const afterDeleted = storedBooks.filter((book) => book.id !== buttonId);
+      
+        e.target.parentElement.remove();
+      
+        localStorage.setItem('mybooks', JSON.stringify(afterDeleted));
+        
+    }
 };
 
 add.addEventListener('click', addBook);
-buttons.forEach((button) => button.addEventListener('click', removeBook));
+
+myBooks.addEventListener('click', removeBook);
