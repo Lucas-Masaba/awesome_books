@@ -37,8 +37,6 @@ const addBook = (e) => {
     myBooks.appendChild(li);
     localStorage.setItem('mybooks', JSON.stringify(updatedCollection));
   }
-
 };
 
 add.addEventListener('click', addBook);
-
