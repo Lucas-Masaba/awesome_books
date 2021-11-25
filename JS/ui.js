@@ -3,12 +3,12 @@ class UI {
     
   }
 
-  static validateForm() {
-    const inputFields = [...document.querySelectorAll("input")]
+  static validateForm(input) {
+    const inputFields = [...document.querySelectorAll(input)]
     inputFields.every(inputField => inputField.trim().length > 2)
   }
-  static addBook() {
-
+  static addBook(event) {
+    event.preventDefault()
   }
   static removeBook() {
 
