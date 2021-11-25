@@ -1,6 +1,25 @@
 class UI {
   static displayBooks() {
-    
+    const addButton = document.getElementById("add");
+        const booksUL = document.getElementById("books");
+        const allBooks = Storage.allBooks;
+
+        allBooks.forEach( book => {
+            const li = document.createElement("li");
+            li.innerHTML = `
+                <h3>${book.title}</h3>
+                <p>Author: ${book.author}</p>
+                <button data-id="${book.id}" type="button">Remove</button>
+                <hr>
+            `;
+
+            booksUL.appendChild(li);
+        } )
+
+        
+        addButton.addEventListener("click", UI.addBook)
+
+        booksUL.addEventListener( "click", (event) => UI.remove(event) );
   }
 
   static validateForm(input) {
