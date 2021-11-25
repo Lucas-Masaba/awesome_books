@@ -1,21 +1,27 @@
-class storage {
-  static get books() {
-    bookCollection = [
+class Storage {
+
+  static get allBooks() {
+
+    const bookCollection = [
       {
-        id: '0',
-        title: 'Death Row',
-        author: 'Albert Wesker',
+        id: "1",
+        title: "The book of truth",
+        author: "Angel Moraiah",
       },
       {
-        id: '1',
-        title: 'Royal Skump',
-        author: 'Jubali Winchester',
-      },
-      {
-        id: '2',
-        title: 'Sucker Punch',
-        author: 'Man of action',
+        id: "2",
+        title: "The book of truth",
+        author: "Angel Moraiah",
       },
     ];
+
+    if ( localStorage.getItem("mybooks") ) {
+      return JSON.parse( localStorage.getItem("mybooks") )
+    }
+
+    localStorage.setItem("mybooks", JSON.stringify(bookCollection));
+    return bookCollection
+
   }
+
 }
