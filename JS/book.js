@@ -9,7 +9,8 @@ class Book {
   static remove(bookId) {
     const existingBooks = JSON.parse(localStorage.getItem('mybooks'));
     const afterRemoved = existingBooks.filter((book) => book.id != bookId);
-    
+
     localStorage.setItem('mybooks', JSON.stringify(afterRemoved));
   }
 }
+export default Book;

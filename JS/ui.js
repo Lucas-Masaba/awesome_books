@@ -21,10 +21,10 @@ class UI {
     booksUL.addEventListener('click', (event) => UI.remove(event));
   }
 
-  static addBook(event)  {
+  static addBook(event) {
     event.preventDefault();
 
-    if (UI.formIsValid('form input')) {  
+    if (UI.formIsValid('form input')) {
       const form = document.querySelector('form');
 
       const id = Storage.allBooks.length + 1;
