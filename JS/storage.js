@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-undef, no-return-assign */
 class Storage {
   static get allBooks() {
     const bookCollection = [

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars, no-undef, no-return-assign */
 class Book {
   static save(book) {
     const existingBooks = JSON.parse(localStorage.getItem('mybooks'));
@@ -8,9 +9,9 @@ class Book {
 
   static remove(bookId) {
     const existingBooks = JSON.parse(localStorage.getItem('mybooks'));
-    const afterRemoved = existingBooks.filter((book) => book.id != bookId);
+    const afterRemoved = existingBooks.filter((book) => Number(book.id) !== Number(bookId));
 
     localStorage.setItem('mybooks', JSON.stringify(afterRemoved));
   }
 }
-export default Book;
+s
