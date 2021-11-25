@@ -1,5 +1,5 @@
 class storage {
-  static books() {
+  static get books() {
     bookCollection = [
       {
         id: '0',
