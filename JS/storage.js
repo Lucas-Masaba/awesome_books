@@ -1,3 +1,5 @@
 class storage {
-  static books
+  static books {
+
+  }
 }
