@@ -69,15 +69,6 @@ class UI {
     const booksUL = document.getElementById('books');
     const newBookToAppend = document.createElement('li');
 
-    //   <div>
-    //   <h3>"${book.title}" </h3>
-    //   <span> by ${book.author}</span>
-    // </div>
-    // <button
-    //   data-id="${book.id}"
-    //   type="button">Remove
-    // </button>
-
     newBookToAppend.innerHTML = `
             
             <div>
