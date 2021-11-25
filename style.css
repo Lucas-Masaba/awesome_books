@@ -1,21 +1,72 @@
 * {
   font-family: "Comic Neue", "Courier New", Courier, monospace;
 }
+
 #books {
   list-style-type: none;
   padding-left: 0%;
   background: rgb(233, 226, 226);
-  
+  border: solid 2px #666;
 }
+
 .awesome_books {
   text-align: center;
 }
+
 #books li {
   display: flex;
-  
+  justify-content: space-between;
   align-items: baseline;
 }
+
 ul h3 {
   margin: 0 10px ;
+  display: inline-block;
+  padding: 10px 2px;
 }
 
+ul button {
+  margin: auto 10px;
+}
+
+.grey {
+  background-color: rgb(85, 84, 84);
+}
+
+.whiteSmoke {
+  background-color: rgb(247, 241, 241);
+}
+
+.form_section {
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+}
+
+form {
+  display: block;
+  margin: auto;
+}
+
+form input {
+  margin-bottom: 10px;
+}
+
+.form_section h3 {
+ text-align: center;
+}
+
+.form_section p button {
+  float: right;
+  margin-right: 50px;
+}
+
+.form_section form,
+.form_section input 
+{
+  width: 90%;
+}
+
+button {
+  box-shadow: 1px 1px 2px 1px #666;
+}

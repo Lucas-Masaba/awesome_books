@@ -5,13 +5,21 @@ class UI {
     const booksUL = document.getElementById('books');
     const { allBooks } = Storage;
 
-    allBooks.forEach((book) => {
+    allBooks.forEach((book, index) => {
       const li = document.createElement('li');
+      index % 2 === 0 ? 
+      li.classList.add("gray") : 
+      li.classList.add("whiteSmoke")
+
       li.innerHTML = `
-                <h3>"${book.title}" </h3>
-                <p> by ${book.author}</p>
-                <button data-id="${book.id}" type="button">Remove</button>
-                <hr>
+                <div>
+                  <h3>"${book.title}" </h3>
+                  <span> by ${book.author}</span>
+                </div> 
+                <button 
+                  data-id="${book.id}" 
+                  type="button">Remove
+                </button>
             `;
 
       booksUL.appendChild(li);
@@ -38,6 +46,16 @@ class UI {
       Book.save(newBook);
       UI.appendBook(newBook);
       UI.resetForm();
+
+
+      const bookList = [...document.querySelectorAll("#books li")]
+      console.log(bookList)
+      bookList.forEach( (item, index) => {
+        index % 2 === 0 ? 
+        item.classList.add("gray") : 
+        item.classList.add("whiteSmoke")
+      })
+
     }
   }
 
@@ -50,11 +68,24 @@ class UI {
     const booksUL = document.getElementById('books');
     const newBookToAppend = document.createElement('li');
 
+  //   <div>
+  //   <h3>"${book.title}" </h3>
+  //   <span> by ${book.author}</span>
+  // </div> 
+  // <button 
+  //   data-id="${book.id}" 
+  //   type="button">Remove
+  // </button>
+
     newBookToAppend.innerHTML = `
-            <h3>${newBook.title}</h3>
-            <p>Author: ${newBook.author}</p>
+            
+            <div>
+              <h3>"${newBook.title}" </h3>
+              <span> by ${newBook.author}</span>
+            </div> 
+
             <button data-id="${newBook.id}" type="button">Remove</button>
-            <hr>
+
         `;
 
     booksUL.appendChild(newBookToAppend);
