@@ -20,9 +20,13 @@
 }
 
 ul h3 {
-  margin: 0 10px ;
+  margin: 0 10px;
   display: inline-block;
   padding: 10px 2px;
+}
+
+button {
+  box-shadow: 1px 1px 2px 1px #666;
 }
 
 ul button {
@@ -53,7 +57,7 @@ form input {
 }
 
 .form_section h3 {
- text-align: center;
+  text-align: center;
 }
 
 .form_section p button {
@@ -62,11 +66,6 @@ form input {
 }
 
 .form_section form,
-.form_section input 
-{
+.form_section input {
   width: 90%;
-}
-
-button {
-  box-shadow: 1px 1px 2px 1px #666;
 }
