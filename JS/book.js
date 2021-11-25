@@ -14,4 +14,3 @@ class Book {
     localStorage.setItem('mybooks', JSON.stringify(afterRemoved));
   }
 }
-s
