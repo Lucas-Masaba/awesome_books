@@ -8,8 +8,8 @@ class UI {
     allBooks.forEach((book) => {
       const li = document.createElement('li');
       li.innerHTML = `
-                <h3>${book.title}</h3>
-                <p>Author: ${book.author}</p>
+                <h3>"${book.title}" </h3>
+                <p> by ${book.author}</p>
                 <button data-id="${book.id}" type="button">Remove</button>
                 <hr>
             `;
