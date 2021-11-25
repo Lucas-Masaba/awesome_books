@@ -17,19 +17,11 @@
   <main>
     <section>
       <ul  id="books">
-        <li>
-          <h3>Lorem Ipsum</h3>
-          <p>Testeroo Testy</p>
-          <button type="button">Remove</button>
-          <hr>
-        </li>
-        <li>
-          <h3>Second book</h3>
-          <p>Testeroo Testy</p>
-          <button class="deleteBook" type="button">Remove</button>
-          <hr>
-        </li>
       </ul>
+
+      <script type="module">
+        UI.displayBooks()
+      </script>
       
     </section>
     <section class="form_section">
@@ -41,8 +33,9 @@
       </form>
     </section>
   </main>
-  <script src="./JS/books.js"></script>
+  
   <script src="./JS/storage.js"></script>
+  <script src="./JS/books.js"></script>
   <script src="./JS/ui.js"></script>
 </body>
 
