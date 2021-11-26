@@ -2,6 +2,8 @@
 
 > Awesome Books
 
+## Desktop Preview
+![screenshot](./pics/screenshot.png)
 
 ## Built With
 
