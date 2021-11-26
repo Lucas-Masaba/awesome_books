@@ -57,6 +57,7 @@ class UI {
           item.classList.add('whiteSmoke');
         }
       });
+      
     }
   }
 
