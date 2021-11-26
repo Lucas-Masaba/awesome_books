@@ -125,3 +125,10 @@ header h1 {
 .page {
   padding: 20px 30px;
 }
+
+#luxon_date {
+  text-align: right;
+  font-weight: bolder;
+  font-family: 'Courier New', Courier, monospace;
+  padding-right: 30px;
+}

@@ -26,6 +26,7 @@ class UI {
       booksUL.appendChild(li);
     });
 
+    UI.showDigitalClock();
     addButton.addEventListener('click', UI.addBook);
     Navbar.show();
     booksUL.addEventListener('click', (event) => UI.remove(event));
@@ -96,5 +97,19 @@ class UI {
   static resetForm() {
     const inputs = [...document.querySelectorAll('form input')];
     inputs.forEach((input) => input.value = '');
+  }
+
+  static showDigitalClock() {
+    const showTime = () => {
+      const clock = document.getElementById("luxon_date");
+      const dt = luxon.DateTime.now();
+      const theTime = `${dt.toLocaleString(luxon.DateTime.DATE_FULL)} ${dt.toLocaleString(luxon.DateTime.TIME_WITH_SECONDS)}`;
+      clock.innerText = theTime;
+  
+    }
+  
+    setInterval(() => {
+       showTime();
+    }, 1000);
   }
 }
