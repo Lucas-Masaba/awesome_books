@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
   <title>Awesome books</title>
-
 </head>
 
 <body>
@@ -15,14 +14,19 @@
   <main>
     <section>
       <header>
-        <h1 class="awesome_books">Awesome books</h1>
+        <h1 class="logo-text">Awesome books</h1>
+        <nav id="navbar">
+        </nav>
       </header>
-      <ul id="books">
-
-      </ul>
-      
     </section>
-    <section class="form_section">
+
+    <section id="book-page" class="page showing">
+      <h1 class="awesome_books">The books</h1>
+      <ul id="books">
+      </ul>
+    </section>
+
+    <section id="add-page" class="form_section page not-showing">
       <h3>Add book here</h3>
       <form action="/">
         <input type="text" name="title" placeholder="Title"><br>
@@ -30,8 +34,19 @@
         <p><button id="add" type="submit">Add</button></p>
       </form>
     </section>
+
+    <section id="contact-page" class="page not-showing">
+      <h1>
+        Contact Us
+      </h1>
+      <div>
+        Contact for will be here!
+      </div>
+
+    </section>
   </main>
   <script src="./JS/storage.js"></script>
+  <script src="./JS/navbar.js"></script>
   <script src="./JS/book.js"></script>
   <script src="./JS/ui.js"></script>
   <script type="module">

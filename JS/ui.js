@@ -26,6 +26,8 @@ class UI {
       booksUL.appendChild(li);
     });
 
+    Navbar.show();
+
     addButton.addEventListener('click', UI.addBook);
 
     booksUL.addEventListener('click', (event) => UI.remove(event));
