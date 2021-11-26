@@ -4,7 +4,7 @@ class UI {
     const addButton = document.getElementById('add');
     const booksUL = document.getElementById('books');
     const { allBooks } = Storage;
-    Navbar.show();
+    
     allBooks.forEach((book, index) => {
       const li = document.createElement('li');
       if (index % 2 === 0) {
