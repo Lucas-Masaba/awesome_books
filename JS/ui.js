@@ -27,7 +27,7 @@ class UI {
     });
 
     addButton.addEventListener('click', UI.addBook);
-
+    
     booksUL.addEventListener('click', (event) => UI.remove(event));
   }
 
