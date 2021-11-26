@@ -4,7 +4,7 @@ class UI {
     const addButton = document.getElementById('add');
     const booksUL = document.getElementById('books');
     const { allBooks } = Storage;
-    
+
     allBooks.forEach((book, index) => {
       const li = document.createElement('li');
       if (index % 2 === 0) {
@@ -101,15 +101,14 @@ class UI {
 
   static showDigitalClock() {
     const showTime = () => {
-      const clock = document.getElementById("luxon_date");
+      const clock = document.getElementById('luxon_date');
       const dt = luxon.DateTime.now();
       const theTime = `${dt.toLocaleString(luxon.DateTime.DATE_FULL)} ${dt.toLocaleString(luxon.DateTime.TIME_WITH_SECONDS)}`;
       clock.innerText = theTime;
-  
-    }
-  
+    };
+
     setInterval(() => {
-       showTime();
+      showTime();
     }, 1000);
   }
 }
