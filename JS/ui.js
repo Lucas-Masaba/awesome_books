@@ -24,12 +24,14 @@ class UI {
             `;
 
       booksUL.appendChild(li);
+      
     });
 
     UI.showDigitalClock();
     addButton.addEventListener('click', UI.addBook);
     Navbar.show();
     booksUL.addEventListener('click', (event) => UI.remove(event));
+    
   }
 
   static addBook(event) {
@@ -112,3 +114,7 @@ class UI {
     }, 1000);
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  UI.displayBooks();
+ 
+});
